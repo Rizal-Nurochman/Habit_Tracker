@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AddDialogHabit extends StatelessWidget {
-  AddDialogHabit({super.key});
+class AddHabitDialog extends StatelessWidget {
+  AddHabitDialog({super.key});
 
   final TextEditingController _controller = TextEditingController();
 
