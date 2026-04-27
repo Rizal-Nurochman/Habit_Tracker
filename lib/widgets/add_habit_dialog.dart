@@ -8,11 +8,12 @@ class AddHabitDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       title: const Text("Tambah Habit Baru"),
       content: TextField(
         controller: _controller,
         decoration: const InputDecoration(
-          hintText: "Nama Habit ...",
+          hintText: "Contoh: Minum Air 2 Liter",
         ),
         autofocus: true,
       ),

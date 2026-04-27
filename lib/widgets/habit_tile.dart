@@ -16,21 +16,33 @@ class HabitTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Checkbox(
-        value: isDone,
-        onChanged: onChanged,
-      ),
-      title: Text(
-        name,
-        style: TextStyle(
-          decoration: isDone ? TextDecoration.lineThrough : TextDecoration.none,
-          color: isDone ? Colors.grey : null,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12)
         ),
-      ),
-      trailing: IconButton(
-        icon: const Icon(Icons.delete, color: Colors.red),
-        onPressed: onDelete,
+        child: ListTile(
+          contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          leading: Checkbox(
+            value: isDone, onChanged: onChanged, shape: const CircleBorder(), activeColor: Colors.green,
+          ),
+          title: Text(
+            name,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: isDone ? FontWeight.normal : FontWeight.w500,
+              decoration: isDone ? TextDecoration.lineThrough : TextDecoration.none,
+              color: isDone ? Colors.grey : null,
+            ),
+          ),
+          trailing: IconButton(
+            icon: const Icon(
+              Icons.delete_outline, color: Colors.red
+            ),
+            onPressed: onDelete,
+          ),
+        ),
       ),
     );
   }

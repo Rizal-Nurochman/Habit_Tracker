@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light
           ),
         appBarTheme: const AppBarTheme(
-          centerTitle: true
+          centerTitle: true,
         )
       ),
       home: const HomeScreen(),

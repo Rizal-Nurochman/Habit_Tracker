@@ -47,10 +47,13 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: _habits.isEmpty
           ? const Center(
-              child: Text(
-                'Belum ada habit.\nTekan + untuk menambahkan.',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, color: Colors.grey),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.event_note_sharp, size: 70),
+                  Text("Belum ada habit", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  Text("Tekan tombol + di bawah\n untuk menambah habit!")
+                ],
               ),
             )
           : ListView.builder(
@@ -65,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
             ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           final name = await showDialog<String>(
             context: context,
@@ -75,7 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
             _addHabit(name);
           }
         },
-        child: const Icon(Icons.add),
+        icon: Icon(Icons.add),
+        label: const Text("Tambah Habit"),
       ),
     );
   }
