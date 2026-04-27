@@ -14,8 +14,13 @@ class MyApp extends StatelessWidget {
       title: 'Habit Tracker',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.teal,
+          brightness: Brightness.light
+          ),
+        appBarTheme: const AppBarTheme(
+          centerTitle: true
+        )
       ),
       home: const HomeScreen(),
     );

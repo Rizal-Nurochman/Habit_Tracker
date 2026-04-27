@@ -17,6 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _habits.add(Habit(name: name));
     });
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text("Habit $name berhasil ditambahkan!"))
+    );
   }
 
   void _toggleHabit(int index) {
@@ -26,9 +29,13 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _deleteHabit(int index) {
+    final habitName = _habits[index].name;
     setState(() {
       _habits.removeAt(index);
     });
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text("Habit $habitName telah dihapus"))
+    );
   }
 
   @override
